@@ -1,0 +1,372 @@
+/* ====================================================
+   Highly Large CSS Stylesheet with Detailed Explanations
+   ==================================================== */
+
+/* ---------- CSS Reset ----------
+   This section removes the default browser styling to ensure consistency across all browsers.
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+main, menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* Set HTML5 elements to display as block elements */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, main, menu, nav, section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol, ul {
+  list-style: none;
+}
+blockquote, q {
+  quotes: none;
+}
+blockquote::before, blockquote::after,
+q::before, q::after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* ---------- CSS Variables and Global Settings ----------
+   Define variables for colors, fonts, and transitions to maintain consistency.
+*/
+:root {
+  --primary-color: #3498db;       /* Primary theme color */
+  --secondary-color: #2ecc71;     /* Secondary theme color */
+  --accent-color: #e74c3c;        /* Accent color for interactive elements */
+  --bg-color: #ecf0f1;            /* Background color */
+  --text-color: #2c3e50;          /* Default text color */
+  --font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --transition-duration: 0.3s;    /* Transition duration for hover and other effects */
+}
+
+/* ---------- Global Styling ----------
+   Base styles applied to the whole document.
+*/
+body {
+  font-family: var(--font-family);
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  line-height: 1.6;
+  padding: 20px;
+  font-size: 16px;
+}
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+  transition: color var(--transition-duration);
+}
+a:hover {
+  color: var(--accent-color);
+  text-decoration: underline;
+}
+
+/* ---------- Layout Grid System ----------
+   A simple grid system using flexbox for responsive layouts.
+*/
+/* Container centers content and constrains its maximum width */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+/* Row for flex layout to organize columns */
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin: -10px; /* Negative margin to offset column padding */
+}
+/* Column for flexible, responsive columns */
+.col {
+  flex: 1;
+  padding: 10px;
+  min-width: 200px;
+}
+
+/* ---------- Header ----------
+   Styles for the header section, including background and text styling.
+*/
+.header {
+  background-color: var(--primary-color);
+  color: #fff;
+  padding: 20px 0;
+  text-align: center;
+}
+.header h1 {
+  margin: 0;
+  font-size: 2.5rem;
+}
+
+/* ---------- Navigation Bar ----------
+   Styles for the navigation menu for easy site navigation.
+*/
+.navbar {
+  background-color: var(--secondary-color);
+  display: flex;
+  justify-content: center;
+  padding: 10px 0;
+}
+.navbar ul {
+  display: flex;
+  gap: 20px;
+}
+.navbar li {
+  list-style: none;
+}
+.navbar a {
+  color: #fff;
+  font-weight: bold;
+  transition: background-color var(--transition-duration);
+  padding: 8px 16px;
+  border-radius: 4px;
+}
+.navbar a:hover {
+  background-color: var(--accent-color);
+}
+
+/* ---------- Main Content ----------
+   Styling for the main content area of the page.
+*/
+.main-content {
+  margin: 20px 0;
+}
+.article {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 4px;
+}
+.article h2 {
+  margin-top: 0;
+}
+.article p {
+  margin-bottom: 1em;
+}
+
+/* ---------- Sidebar ----------
+   Styles for the sidebar, typically used for secondary content.
+*/
+.sidebar {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  padding: 20px;
+  border-radius: 4px;
+}
+.sidebar h3 {
+  margin-top: 0;
+}
+.sidebar ul {
+  list-style-type: disc;
+  margin-left: 20px;
+}
+
+/* ---------- Forms and Inputs ----------
+   Enhances the appearance of forms and input elements for usability.
+*/
+form {
+  background-color: #fff;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  margin-bottom: 20px;
+}
+input[type="text"],
+input[type="email"],
+textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+input[type="submit"],
+button {
+  background-color: var(--primary-color);
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color var(--transition-duration);
+}
+input[type="submit"]:hover,
+button:hover {
+  background-color: var(--accent-color);
+}
+
+/* ---------- Tables ----------
+   Styles for tables to enhance their readability and appearance.
+*/
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+th,
+td {
+  border: 1px solid #ddd;
+  padding: 12px;
+  text-align: left;
+}
+th {
+  background-color: var(--primary-color);
+  color: #fff;
+}
+tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+/* ---------- Footer ----------
+   Footer styling at the bottom of the page.
+*/
+.footer {
+  background-color: var(--text-color);
+  color: #fff;
+  text-align: center;
+  padding: 20px 0;
+  margin-top: 40px;
+}
+
+/* ---------- Animations and Transitions ----------
+   Define animations and transition effects for interactive elements.
+*/
+/* Fade-in animation for elements */
+.fade-in {
+  animation: fadeIn 1s ease-in-out;
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+/* Slide-in animation for elements */
+.slide-in {
+  animation: slideIn 0.5s ease-out;
+}
+@keyframes slideIn {
+  from { transform: translateX(-100%); }
+  to { transform: translateX(0); }
+}
+
+/* ---------- Utility Classes ----------
+   Helper classes to apply common styles quickly.
+*/
+.text-center {
+  text-align: center;
+}
+.mt-20 {
+  margin-top: 20px;
+}
+.mb-20 {
+  margin-bottom: 20px;
+}
+.p-20 {
+  padding: 20px;
+}
+.hidden {
+  display: none !important;
+}
+.visible {
+  display: block !important;
+}
+
+/* ---------- Responsive Design ----------
+   Media queries to ensure the layout adapts on various screen sizes.
+*/
+@media (max-width: 768px) {
+  /* Navigation: stack menu items vertically */
+  .navbar ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+  /* Stack columns vertically */
+  .row {
+    flex-direction: column;
+  }
+  .article, .sidebar {
+    margin-bottom: 15px;
+  }
+}
+@media (max-width: 480px) {
+  /* Adjust header font size for small screens */
+  .header h1 {
+    font-size: 2rem;
+  }
+  /* Reduce padding and font size for navigation links */
+  .navbar a {
+    padding: 8px 12px;
+    font-size: 14px;
+  }
+}
+
+/* ---------- Print Styles ----------
+   Adjustments for printing the page.
+*/
+@media print {
+  body {
+    font-size: 12pt;
+    background: #fff;
+  }
+  /* Hide navigation and footer when printing */
+  .navbar, .footer {
+    display: none;
+  }
+  /* Remove borders for a cleaner print layout */
+  .article, .sidebar {
+    border: none;
+  }
+}
+
+/* ---------- Miscellaneous Styles ----------
+   Additional utility styles and common element customizations.
+*/
+/* Clearfix utility to clear floated elements */
+.clearfix::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+/* Make images responsive */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+/* Blockquote styling for quotes */
+blockquote {
+  border-left: 4px solid var(--primary-color);
+  padding-left: 20px;
+  color: #666;
+  margin: 20px 0;
+  font-style: italic;
+}
+/* Styling for code blocks and inline code */
+pre, code {
+  font-family: "Courier New", Courier, monospace;
+  background-color: #f4f4f4;
+  padding: 5px 10px;
+  border-radius: 4px;
+}
